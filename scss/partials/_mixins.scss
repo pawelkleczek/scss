@@ -1,0 +1,36 @@
+$deco: none;
+$link: none;
+$visit: none;
+$activ: none;
+$hover: none;
+$opaci: none;
+
+@mixin link {
+	& {
+		text-decoration: $deco;
+	}
+	&:link {
+		color: $link;
+		opacity: $opaci;
+	}
+	&:visited {
+		color: $visit;
+		opacity: $opaci;
+	}
+	&:hover {
+		color: $hover;
+		opacity: ($opaci + .2);
+	}
+	&:active {
+		color: $activ;
+		opacity: ($opaci - .2);
+	}
+	&:visited:hover {
+		color: $hover;
+		opacity: ($opaci + .2);
+	}
+	&:visited:active {
+		color: $activ;
+		opacity: ($opaci - .2);
+	}
+}
